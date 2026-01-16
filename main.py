@@ -104,7 +104,7 @@ async def create_todo(request: Request):
     cursor.close()
     conn.close()
 
-    logging.debug(f'새로운 할 일 생성 완료: ID{todo_id}')
+    logger.info(f'새로운 할 일 생성 완료: ID{todo_id}')
     print(todo_id)
 
     return {
