@@ -1,0 +1,196 @@
+2026-01-16 13:20:22,619 | INFO | uvicorn.error | Started server process [17952]
+2026-01-16 13:20:22,632 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-16 13:20:22,637 | INFO | uvicorn.error | Application startup complete.
+2026-01-16 13:20:22,637 | INFO | uvicorn.error | Application startup complete.
+2026-01-16 13:20:22,715 | ERROR | uvicorn.error | Traceback (most recent call last):
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2026-01-16 13:20:22,715 | ERROR | uvicorn.error | Traceback (most recent call last):
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2026-01-16 13:20:24,991 | INFO | uvicorn.error | Started server process [3044]
+2026-01-16 13:20:24,990 | INFO | uvicorn.error | Started server process [14952]
+2026-01-16 13:20:24,999 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-16 13:20:25,003 | INFO | uvicorn.error | Application startup complete.
+2026-01-16 13:20:25,001 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-16 13:20:25,006 | INFO | uvicorn.error | Application startup complete.
+2026-01-16 13:24:12,873 | INFO | uvicorn.access | 127.0.0.1:60652 - "GET /todos HTTP/1.1" 500
+2026-01-16 13:24:12,873 | ERROR | uvicorn.error | Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\mysql\connector\connection_cext.py", line 354, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on 'localhost:3306' (10061)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\main.py", line 102, in get_todos
+    conn = get_db()
+           ^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\main.py", line 40, in get_db
+    return mysql.connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\mysql\connector\pooling.py", line 322, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\mysql\connector\connection_cext.py", line 142, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\mysql\connector\abstracts.py", line 1604, in connect
+    self._open_connection()
+  File "C:\Users\gyjh4\OneDrive\Desktop\newfolder\project\.venv\Lib\site-packages\mysql\connector\connection_cext.py", line 360, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2026-01-16 13:24:39,983 | INFO | uvicorn.error | Shutting down
+2026-01-16 13:24:40,090 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-16 13:24:40,092 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-16 13:24:40,095 | INFO | uvicorn.error | Finished server process [3044]
+2026-01-16 13:24:43,405 | INFO | uvicorn.error | Shutting down
+2026-01-16 13:24:43,531 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-16 13:24:43,533 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-16 13:24:43,536 | INFO | uvicorn.error | Finished server process [14952]
+2026-01-16 13:24:48,960 | INFO | uvicorn.error | Started server process [2896]
+2026-01-16 13:24:48,972 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-16 13:24:48,977 | INFO | uvicorn.error | Application startup complete.
+2026-01-16 13:29:12,199 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:29:13,920 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:29:14,132 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:29:14,132 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:32:36,306 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:32:37,746 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:32:37,937 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:32:37,937 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:35:31,315 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:35:32,657 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:35:32,819 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 13:35:32,819 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:24:39,708 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:24:42,147 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:24:42,457 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:24:42,457 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:26:09,881 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:26:11,392 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:26:11,552 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:26:11,552 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:31:09,839 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:31:10,119 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:31:10,119 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:33:42,308 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:33:43,834 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:33:44,092 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:33:44,092 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:38:42,657 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:38:42,837 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:38:42,837 | INFO | my_app | 애플리케이션이ㅣ 시작되었습니다.
+2026-01-16 15:53:14,719 | INFO | my_app | 새로운 할 일 생성 완료: ID6
+2026-01-16 15:53:14,719 | INFO | my_app | 새로운 할 일 생성 완료: ID6
