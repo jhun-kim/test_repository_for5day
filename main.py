@@ -1,16 +1,68 @@
+import logging
+import os
+import time
+from logging.handlers import RotatingFileHandler
+
 from fastapi import FastAPI, Request, HTTPException
 import mysql.connector
 import uvicorn
+
+#로그 저장
+os.makedirs("logs", exist_ok=True)
+logger = logging.getLogger("my_app")
+logger.setLevel(logging.INFO)
+
+#로그 포맷 및 핸들러 설정
+LOG_FORMAT = "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+
+formatter = logging.Formatter(LOG_FORMAT)
+
+file_handler = RotatingFileHandler(
+    filename="logs/app.log",
+    encoding="utf-8",
+)
+file_handler.setFormatter(formatter)
+
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+logger.info('애플리케이션이ㅣ 시작되었습니다.')
+
 app = FastAPI()
 
 def get_db():
-    return mysql.connector.connect(
+    con = mysql.connector.connect(
         host="localhost",
         port=3306,
         user="tester",
         password="1234",
         database="test_db"
     )
+    return con
+
+"""
+def get_db():
+    retries = 5
+    while retries > 0:
+        try:
+            conn = mysql.connector.connect(
+                host="localhost",
+                port=3306,
+                user="tester",
+                password="1234",
+                database="test_db"
+            )
+            return conn
+        except mysql.connector.Error as err:
+            print(f"접속 대기 중... 남은 시도: {retries} (에러: {err})")
+            retries -= 1
+            time.sleep(5)  # 5초 대기 후 재시도
+    raise Exception("DB 접속에 최종 실패했습니다.")
+"""
+
 
 
 # ---------------------------
@@ -22,6 +74,7 @@ async def create_todo(request: Request):
     content = body.get("content")
 
     if not content:
+        logging.error('제목 없는 할 일 생성 시도')
         raise HTTPException(status_code=400, detail="content is required")
 
     conn = get_db()
@@ -50,6 +103,9 @@ async def create_todo(request: Request):
 
     cursor.close()
     conn.close()
+
+    logging.debug(f'새로운 할 일 생성 완료: ID{todo_id}')
+    print(todo_id)
 
     return {
         "id": row[0],
